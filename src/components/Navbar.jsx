@@ -34,17 +34,23 @@ function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          import React from "react"
-import ReactDOM from "react-dom/client"
-import App from "./App.jsx"
-import "./index.css"
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
-
+          <div className="hidden md:flex space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`text-base font-medium transition-colors ${
+                  isActive(item.path)
+                    ? "text-yellow-500"
+                    : isDarkMode
+                      ? "text-gray-300 hover:text-yellow-400"
+                      : "text-gray-600 hover:text-yellow-500"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
           {/* Right Side */}
           <div className="flex items-center space-x-4">

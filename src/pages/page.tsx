@@ -182,10 +182,9 @@ const ricePositions = [
   { left: "50%", top: "25%", x: 20, duration: 3.5, delay: 1 },
   { left: "70%", top: "15%", x: -10, duration: 2.8, delay: 1.2 },
   { left: "80%", top: "30%", x: 12, duration: 3.2, delay: 0.7 },
+]
 
-
-export default function SembakoEcommerce() {
-  // States
+function SembakoEcommerce() {
   const [currentPage, setCurrentPage] = useState("home")
   const [cart, setCart] = useState<CartItem[]>([])
   const [searchQuery, setSearchQuery] = useState("")
@@ -205,6 +204,7 @@ export default function SembakoEcommerce() {
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setContact({ ...contact, [e.target.name]: e.target.value })
   }
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     alert("Pesan Anda telah dikirim! Terima kasih telah menghubungi kami.")
@@ -1137,3 +1137,5 @@ export default function SembakoEcommerce() {
     </div>
   )
 }
+
+export default SembakoEcommerce
