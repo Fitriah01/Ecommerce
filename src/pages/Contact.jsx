@@ -16,14 +16,14 @@ function Contact() {
 
   const faqs = [
     {
-      question: "Apakah ada pengiriman ke luar kota?",
+      question: "Bagaimana cara memesan produk di Kirei's Mart?",
       answer:
-        "Ya, kami melayani pengiriman ke seluruh Indonesia. Untuk pengiriman luar kota, kami menggunakan jasa ekspedisi terpercaya dengan estimasi waktu 2-5 hari kerja tergantung lokasi.",
+        "Anda dapat memesan produk melalui website kami dengan menambahkan barang ke dalam keranjang belanja, lalu melanjutkan ke proses checkout. Kami juga menyediakan layanan pemesanan melalui WhatsApp untuk kenyamanan Anda.",
     },
     {
       question: "Bagaimana cara berlangganan rutin?",
       answer:
-        "Anda bisa berlangganan dengan menghubungi customer service kami melalui WhatsApp. Kami menyediakan paket langganan mingguan dan bulanan dengan diskon khusus untuk pelanggan tetap.",
+        "Anda bisa berlangganan dengan menghubungi kami melalui WhatsApp. Kami menyediakan paket langganan mingguan dan bulanan dengan diskon khusus untuk pelanggan tetap.",
     },
     {
       question: "Apa yang terjadi jika stok habis?",
@@ -39,6 +39,31 @@ function Contact() {
       question: "Apakah produk dijamin fresh?",
       answer:
         "Ya, semua produk kami dijamin fresh dan berkualitas. Kami melakukan rotasi stok secara rutin dan memiliki sistem penyimpanan yang baik untuk menjaga kualitas produk.",
+    },
+    {
+      question: "Berapa lama waktu pengiriman pesanan?",
+      answer:
+        "Untuk area Kota Palembang, pengiriman biasanya akan segera dilakukan setelah customer melakukan pembayaran.",
+    },
+    {
+      question: "Apakah Kirei's Mart menerima pengembalian produk?",
+      answer:
+        "Ya, kami menerima pengembalian produk jika produk rusak atau tidak sesuai dengan deskripsi selagi ada foto dan video sebagai bukti. Silakan hubungi WhatsApp kami untuk informasi lebih lanjut.",
+    },
+    {
+      question: "Apakah ada biaya pengiriman?",
+      answer:
+        "Ya, biaya pengiriman dihitung berdasarkan berat produk dan jarak pengiriman. Untuk pembelian tertentu, kami menawarkan gratis ongkir.",
+    },
+    {
+      question: "Apakah Kirei's Mart menyediakan layanan custom hampers atau paket hadiah?",
+      answer:
+        "Ya, kami menyediakan layanan custom hampers dan paket hadiah untuk berbagai acara seperti ulang tahun, hari raya, dan corporate gifts. Anda bisa memilih produk sesuai keinginan dan kami akan membantu proses pengemasan hingga pengiriman.",
+    },
+    {
+      question: "Bagaimana jika saya ingin memberikan saran atau komplain?",
+      answer:
+        "Kami sangat terbuka dengan masukan dan kritik dari pelanggan. Anda dapat mengirimankan komplain melalui email ataupun WhatsApp kami. Kami akan merespon secepat mungkin",
     },
   ]
 
@@ -59,7 +84,7 @@ function Contact() {
 
   const handleWhatsApp = () => {
     const message = `Halo, saya ingin bertanya tentang produk Sembako Fresh.`
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/62887437649899?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   }
 
@@ -184,7 +209,7 @@ function Contact() {
                   <div>
                     <p className={`font-medium ${isDarkMode ? "text-white" : "text-gray-800"}`}>Alamat</p>
                     <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
-                      Jl. Sembako Raya No. 123, Jakarta Selatan 12345
+                      Jl. Bambang Utoyo, 3 Ilir, Kec. Ilir Tim II, Kota Palembang.
                     </p>
                   </div>
                 </div>
@@ -193,7 +218,7 @@ function Contact() {
                   <Phone className="w-5 h-5 text-yellow-500" />
                   <div>
                     <p className={`font-medium ${isDarkMode ? "text-white" : "text-gray-800"}`}>Telepon</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>+62 812-3456-7890</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>+62 887-4376-49899</p>
                   </div>
                 </div>
 
@@ -201,7 +226,7 @@ function Contact() {
                   <Mail className="w-5 h-5 text-yellow-500" />
                   <div>
                     <p className={`font-medium ${isDarkMode ? "text-white" : "text-gray-800"}`}>Email</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>info@sembakofresh.com</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>umkmkirei@gmail.com</p>
                   </div>
                 </div>
 
@@ -224,14 +249,14 @@ function Contact() {
               <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-gray-800"}`}>Lokasi Toko</h2>
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7461!2d106.8451!3d-6.2088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9b4c8!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1635123456789!5m2!1sen!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.4546810667034!2d104.781509!3d-2.9712522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b7732c368ffe3%3A0x6fec4f162c4925da!2sMister%20Pangkas!5e0!3m2!1sid!2sid!4v1749804738725!5m2!1sid!2sid"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Lokasi Sembako Fresh"
+                  title="Lokasi Kirei's Mart"
                 />
               </div>
             </div>

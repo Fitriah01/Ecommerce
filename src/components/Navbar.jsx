@@ -30,7 +30,7 @@ function Navbar() {
             <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
               <ShoppingCart className="w-6 h-6 text-white" />
             </div>
-            <span className={`text-xl font-bold ${isDarkMode ? "text-white" : "text-gray-800"}`}>Sembako Fresh</span>
+            <span className={`text-xl font-bold ${isDarkMode ? "text-white" : "text-gray-800"}`}>Kirei's Mart</span>
           </Link>
 
           {/* Desktop Menu */}
