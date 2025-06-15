@@ -24,7 +24,9 @@ function Footer() {
               <li>Bahan Makanan</li>
               <li>Minuman</li>
               <li>Bumbu Masakan</li>
-              <li>Produk Non-Food</li>
+              <li>Non-Food</li>
+              <li>Jajanan</li>
+              <li>Mie</li>
             </ul>
           </div>
 

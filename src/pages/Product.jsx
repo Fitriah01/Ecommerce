@@ -30,6 +30,8 @@ function Product() {
     { value: "minuman", label: "Minuman" },
     { value: "bumbu-masakan", label: "Bumbu Masakan" },
     { value: "nonfood", label: "Non-Food" },
+    { value: "jajanan", label: "Jajanan" },
+    { value: "mie", label: "Mie" },
   ]
 
   return (
