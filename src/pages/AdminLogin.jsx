@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Lock, User, Eye, EyeOff } from "lucide-react"
+import { useProducts } from "../context/ProductContext"
 
 function AdminLogin() {
   const [credentials, setCredentials] = useState({
@@ -13,6 +14,7 @@ function AdminLogin() {
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+  const { isDarkMode } = useProducts()
 
   const handleInputChange = (e) => {
     setCredentials({
@@ -40,14 +42,24 @@ function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-100 via-orange-50 to-red-100 flex items-center justify-center py-12 px-4">
+    <div className={`min-h-screen flex items-center justify-center py-12 px-4 transition-colors duration-300 ${
+      isDarkMode
+        ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700"
+        : "bg-gradient-to-br from-yellow-100 via-orange-50 to-red-100"
+    }`}>
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <Lock className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Admin Login</h1>
+          <h1
+            className={`text-3xl font-bold mb-2 ${
+              isDarkMode ? "text-white" : "text-gray-800"
+            }`}
+          >
+            Admin Login
+          </h1>
           <p className="text-gray-600">Masuk ke dashboard admin Sembako Fresh</p>
         </div>
 
@@ -116,17 +128,6 @@ function AdminLogin() {
               )}
             </button>
           </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p className="text-sm text-yellow-800 font-medium mb-2">Demo Credentials:</p>
-            <p className="text-sm text-yellow-700">
-              Username: <code className="bg-yellow-100 px-1 rounded">admin</code>
-            </p>
-            <p className="text-sm text-yellow-700">
-              Password: <code className="bg-yellow-100 px-1 rounded">kirei123</code>
-            </p>
-          </div>
         </div>
       </div>
     </div>
