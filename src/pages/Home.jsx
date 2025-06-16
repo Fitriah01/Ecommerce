@@ -87,14 +87,14 @@ function Home() {
             {/* Left Content */}
             <div className="animate-fade-in-left">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
-                Sembako
+                Kirei's
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
                   {" "}
-                  Fresh
+                  Mart
                 </span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Kebutuhan sembako segar dan berkualitas untuk keluarga Indonesia. Belanja mudah, harga terjangkau,
+                Kebutuhan sembako berkualitas untuk keluarga. Belanja mudah, harga terjangkau,
                 pengiriman cepat!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
