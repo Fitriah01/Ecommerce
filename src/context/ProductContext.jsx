@@ -589,7 +589,7 @@ const initialState = {
       stock: 5,
       image: "public/minuman/KOPI_BUBUK_666_21_5rb-removebg-preview.png",
       description: "",
-      size: "0 ml",
+      size: "160 g",
       lastUpdated: new Date().toISOString(),
     },
     {
