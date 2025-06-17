@@ -81,7 +81,7 @@ const initialState = {
       category: "bahan-makanan",
       stock: 30,
       image: "",
-      description: "",
+      description: "Margarin premium yang kaya rasa, cocok untuk kue, olesan roti, dan masakan.",
       size: "200g",
       lastUpdated: new Date().toISOString(),
     },

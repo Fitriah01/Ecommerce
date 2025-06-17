@@ -7,28 +7,38 @@ import { useProducts } from "../context/ProductContext"
 function FloatingCart() {
   const [isOpen, setIsOpen] = useState(false)
   const { cart, cartItemsCount, cartTotal, updateCartQuantity, removeFromCart, clearCart } = useProducts()
+  const [showCheckoutForm, setShowCheckoutForm] = useState(false)
+  const [customerName, setCustomerName] = useState("")
+  const [customerPhone, setCustomerPhone] = useState("")
+  const [customerAddress, setCustomerAddress] = useState("")
+  const [deliveryMethod, setDeliveryMethod] = useState("")
 
-  const handleWhatsAppCheckout = () => {
-    const adminNumber = "6281234567890" // Replace with actual admin number
-    let message = "Halo, saya ingin memesan:\n\n"
+  const handleOpenCheckoutForm = () => {
+    setShowCheckoutForm(true)
+  }
 
+  const handleWhatsAppCheckout = (e) => {
+    e.preventDefault()
+    const adminNumber = "6287879060790"
+    let message = "PESANAN BARU KIREI'S MART\n"
+    message += `Nama: ${customerName}\n`
+    message += `No HP: ${customerPhone}\n`
+    message += `Alamat: ${customerAddress}\n`
+    message += `Pengiriman: ${deliveryMethod}\n\n`
+    message += `Detail Pesanan:\n\n`
     cart.forEach((item) => {
-      message += `• ${item.name} (${item.size}) - ${item.quantity}x = Rp${(item.price * item.quantity).toLocaleString()}\n`
+      message += `${item.name} x ${item.quantity} = Rp${(item.price * item.quantity).toLocaleString()}\n`
     })
-
-    const subtotal = cartTotal
-    const discount = subtotal >= 100000 ? subtotal * 0.1 : 0
-    const total = subtotal - discount
-
-    message += `\nSubtotal: Rp${subtotal.toLocaleString()}`
     if (discount > 0) {
-      message += `\nDiskon (10%): -Rp${discount.toLocaleString()}`
+      message += `\nDiskon (10%): -Rp${discount.toLocaleString()}\n`
     }
-    message += `\nTotal: Rp${total.toLocaleString()}`
-    message += `\n\nMohon konfirmasi ketersediaan dan total pembayaran. Terima kasih!`
-
+    message += `\nTotal Pembayaran: Rp${total.toLocaleString()}\n\n`
+    message += `Terima kasih sudah berbelanja di Kireis Mart!`
     const whatsappUrl = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
+    setShowCheckoutForm(false)
+    setIsOpen(false)
+    clearCart()
   }
 
   const subtotal = cartTotal
@@ -132,7 +142,7 @@ function FloatingCart() {
                 </div>
                 <div className="space-y-2">
                   <button
-                    onClick={handleWhatsAppCheckout}
+                    onClick={handleOpenCheckoutForm}
                     className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-colors"
                   >
                     Checkout via WhatsApp
@@ -146,6 +156,41 @@ function FloatingCart() {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Checkout Form Modal */}
+      {showCheckoutForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl max-w-md w-full p-6">
+            <h2 className="text-xl font-bold mb-4">Checkout</h2>
+            <form onSubmit={handleWhatsAppCheckout} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">Nama</label>
+                <input type="text" required value={customerName} onChange={e => setCustomerName(e.target.value)} className="w-full border rounded px-3 py-2" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">No HP</label>
+                <input type="text" required value={customerPhone} onChange={e => setCustomerPhone(e.target.value)} className="w-full border rounded px-3 py-2" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Alamat</label>
+                <textarea required value={customerAddress} onChange={e => setCustomerAddress(e.target.value)} className="w-full border rounded px-3 py-2" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Metode Pengiriman</label>
+                <select required value={deliveryMethod} onChange={e => setDeliveryMethod(e.target.value)} className="w-full border rounded px-3 py-2">
+                  <option value="">Pilih Metode</option>
+                  <option value="Ambil ke toko">Ambil ke toko</option>
+                  <option value="Antar ke alamat">Antar ke alamat</option>
+                </select>
+              </div>
+              <div className="flex justify-end space-x-2">
+                <button type="button" onClick={() => setShowCheckoutForm(false)} className="px-4 py-2 bg-gray-200 rounded">Batal</button>
+                <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded">Checkout via WhatsApp</button>
+              </div>
+            </form>
           </div>
         </div>
       )}
