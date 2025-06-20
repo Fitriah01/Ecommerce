@@ -54,9 +54,7 @@ function AdminLogin() {
             <Lock className="w-10 h-10 text-white" />
           </div>
           <h1
-            className={`text-3xl font-bold mb-2 ${
-              isDarkMode ? "text-white" : "text-gray-800"
-            }`}
+            className={`text-3xl font-bold mb-2 ${isDarkMode ? "text-white" : "text-gray-800"}`}
           >
             Admin Login
           </h1>

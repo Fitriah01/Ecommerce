@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useReducer, useEffect } from "react"
+import { createContext, useContext, useReducer, useEffect } from "react";
 
-const ProductContext = createContext()
+const ProductContext = createContext();
 
 const initialState = {
   products: [
@@ -13,7 +13,7 @@ const initialState = {
       originalPrice: 17000,
       category: "bahan-makanan",
       stock: 3,
-      image: "BERAS SANIA 15rb_1kg.jpg",
+      image: "/foto bahan makanan/beras sania.png",
       description: "",
       size: "1 kg",
       isPromo: true,
@@ -25,7 +25,7 @@ const initialState = {
       price: 0,
       category: "bahan-makanan",
       stock: 8,
-      image: "",
+      image: "/foto bahan makanan/bihun jagung.png",
       description: "",
       size: "2 L",
       lastUpdated: new Date().toISOString(),
@@ -36,7 +36,7 @@ const initialState = {
       price: 10000,
       category: "bahan-makanan",
       stock: 12,
-      image: "",
+      image: "/foto bahan makanan/minyak fortune.png",
       description: "Minyak kualitas terbaik untuk memasak",
       size: "1/2 kg",
       lastUpdated: new Date().toISOString(),
@@ -47,7 +47,7 @@ const initialState = {
       price: 10000,
       category: "bahan-makanan",
       stock: 15,
-      image: "",
+      image: "/foto bahan makanan/segitiga biru.png",
       description: "gandum berkualitas tinggi untuk berbagai olahan",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -58,7 +58,7 @@ const initialState = {
       price: 5000,
       category: "bahan-makanan",
       stock: 20,
-      image: "",
+      image: "/foto bahan makanan/rose brand minyak cup.png",
       description: "MInyak dalam kemasan Cup",
       size: "220 ml",
       lastUpdated: new Date().toISOString(),
@@ -69,7 +69,7 @@ const initialState = {
       price: 18000,
       category: "bahan-makanan",
       stock: 25,
-      image: "",
+      image: "/foto bahan makanan/minyak_kita-removebg-preview.png",
       description: "Minyak goreng kita berkualitas",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -80,7 +80,7 @@ const initialState = {
       price: 9000,
       category: "bahan-makanan",
       stock: 30,
-      image: "",
+      image: "/foto bahan makanan/palmia.png",
       description: "Margarine",
       size: "200g",
       lastUpdated: new Date().toISOString(),
@@ -91,18 +91,19 @@ const initialState = {
       price: 7000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image:
+        "/foto bahan makanan/d89a9ceae423d5212e022ec7b4017bd6-removebg-preview.png",
       description: "Margarine",
       size: "200g",
       lastUpdated: new Date().toISOString(),
     },
-        {
+    {
       id: 9,
       name: "Margarine For Vita",
       price: 7000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/forvita.png",
       description: "Margarine",
       size: "200g",
       lastUpdated: new Date().toISOString(),
@@ -113,7 +114,7 @@ const initialState = {
       price: 10000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/sagu.png",
       description: "Sagu biasa",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -124,7 +125,7 @@ const initialState = {
       price: 26000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/telur.png",
       description: "Telur",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -135,7 +136,7 @@ const initialState = {
       price: 7500,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/tepung beras.png",
       description: "Tepung Beras",
       size: "500 g",
       lastUpdated: new Date().toISOString(),
@@ -146,7 +147,7 @@ const initialState = {
       price: 11000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/tepung ketan.png",
       description: "Tepung Ketan",
       size: "500 g",
       lastUpdated: new Date().toISOString(),
@@ -157,18 +158,18 @@ const initialState = {
       price: 12000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/tepung segitiga biru.png",
       description: "Tepung",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
     },
     {
       id: 15,
-      name: "Tepung Tapioka",
+      name: "Tepung Tapioka Cap Tani",
       price: 7500,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/tepung tapioka cap tani.png",
       description: "Tepung",
       size: "500 g",
       lastUpdated: new Date().toISOString(),
@@ -179,7 +180,7 @@ const initialState = {
       price: 33000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/Tepung Tapioka Cap Tani Liaw Liong.png",
       description: "Tepung",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -190,7 +191,7 @@ const initialState = {
       price: 15000,
       category: "bahan-makanan",
       stock: 5,
-      image: "",
+      image: "/foto bahan makanan/tepung terigu.png",
       description: "Tepung",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -234,7 +235,8 @@ const initialState = {
       price: 8000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/INDOFOOD_KECAP_BOTOL_135ML_8000-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/INDOFOOD_KECAP_BOTOL_135ML_8000-removebg-preview.png",
       description: "",
       size: "135 ml",
       lastUpdated: new Date().toISOString(),
@@ -245,7 +247,8 @@ const initialState = {
       price: 11000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/KALDU_JAMUR_TOTOLE_11000-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/KALDU_JAMUR_TOTOLE_11000-removebg-preview.png",
       description: "",
       size: "80 gr",
       lastUpdated: new Date().toISOString(),
@@ -344,7 +347,8 @@ const initialState = {
       price: 28000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/MAYONAIS_MAESTRO_1kg_28rb-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/MAYONAIS_MAESTRO_1kg_28rb-removebg-preview.png",
       description: "",
       size: "1 kg",
       lastUpdated: new Date().toISOString(),
@@ -377,7 +381,8 @@ const initialState = {
       price: 2000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/RACIK_AYAM_GORENG_REMPAH-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/RACIK_AYAM_GORENG_REMPAH-removebg-preview.png",
       description: "",
       size: "30 g",
       lastUpdated: new Date().toISOString(),
@@ -399,7 +404,8 @@ const initialState = {
       price: 2000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/RACIK_TEMPE___TAHU_GORENG-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/RACIK_TEMPE___TAHU_GORENG-removebg-preview.png",
       description: "",
       size: "20 g",
       lastUpdated: new Date().toISOString(),
@@ -421,7 +427,8 @@ const initialState = {
       price: 12000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/SAOS_EXTRA_HOT_DELMONTE_265ml_12000-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/SAOS_EXTRA_HOT_DELMONTE_265ml_12000-removebg-preview.png",
       description: "",
       size: "265 ml",
       lastUpdated: new Date().toISOString(),
@@ -432,7 +439,8 @@ const initialState = {
       price: 28000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/SARDEN_ABC_425gr_27_5rb___155gr___12rb-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/SARDEN_ABC_425gr_27_5rb___155gr___12rb-removebg-preview.png",
       description: "",
       size: "425 g",
       lastUpdated: new Date().toISOString(),
@@ -443,7 +451,8 @@ const initialState = {
       price: 12000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/SARDEN_ABC_425gr_27_5rb___155gr___12rb-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/SARDEN_ABC_425gr_27_5rb___155gr___12rb-removebg-preview.png",
       description: "",
       size: "155 g",
       lastUpdated: new Date().toISOString(),
@@ -476,7 +485,8 @@ const initialState = {
       price: 16000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/SAUS_BOTOL_270ml_ABC_EXTREME_PEDAS_16000-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/SAUS_BOTOL_270ml_ABC_EXTREME_PEDAS_16000-removebg-preview.png",
       description: "",
       size: "270 ml",
       lastUpdated: new Date().toISOString(),
@@ -487,7 +497,8 @@ const initialState = {
       price: 1000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/SAUS_SASET_DELMONTE_2_500-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/SAUS_SASET_DELMONTE_2_500-removebg-preview.png",
       description: "",
       size: "0 g",
       lastUpdated: new Date().toISOString(),
@@ -520,7 +531,8 @@ const initialState = {
       price: 15000,
       category: "bumbu-masakan",
       stock: 5,
-      image: "public/Bumbu Masakan/SAUS_TOMAT_BOTOL_ABC_15000-removebg-preview.png",
+      image:
+        "public/Bumbu Masakan/SAUS_TOMAT_BOTOL_ABC_15000-removebg-preview.png",
       description: "",
       size: "275 ml",
       lastUpdated: new Date().toISOString(),
@@ -589,7 +601,7 @@ const initialState = {
       stock: 5,
       image: "public/minuman/KOPI_BUBUK_666_21_5rb-removebg-preview.png",
       description: "",
-      size: "0 ml",
+      size: "160 g",
       lastUpdated: new Date().toISOString(),
     },
     {
@@ -952,7 +964,8 @@ const initialState = {
       category: "nonfood",
       stock: 5,
       image: "",
-      description: "public/NonFood/CHARM_SAFENIGHT_29cm-removebg-preview (1).png",
+      description:
+        "public/NonFood/CHARM_SAFENIGHT_29cm-removebg-preview (1).png",
       size: "22 cm",
       lastUpdated: new Date().toISOString(),
     },
@@ -984,7 +997,8 @@ const initialState = {
       price: 0,
       category: "nonfood",
       stock: 5,
-      image: "public/NonFood/CONDITIONER_SASET_PANTENE-removebg-preview (1).png",
+      image:
+        "public/NonFood/CONDITIONER_SASET_PANTENE-removebg-preview (1).png",
       description: "",
       size: "0 g",
       lastUpdated: new Date().toISOString(),
@@ -1182,7 +1196,8 @@ const initialState = {
       price: 1000,
       category: "nonfood",
       stock: 5,
-      image: "public/Nonfood/PEWANGI_PAKAIAN_DOWNY_1rb-removebg-preview (1).png",
+      image:
+        "public/Nonfood/PEWANGI_PAKAIAN_DOWNY_1rb-removebg-preview (1).png",
       description: "Pelembut & Pewangi Pakaian",
       size: "",
       lastUpdated: new Date().toISOString(),
@@ -1347,7 +1362,8 @@ const initialState = {
       price: 1000,
       category: "nonfood",
       stock: 5,
-      image: "public/Nonfood/SHAMPOO_SASET_HEAD_SHOULDERS-removebg-preview (1).png",
+      image:
+        "public/Nonfood/SHAMPOO_SASET_HEAD_SHOULDERS-removebg-preview (1).png",
       description: "",
       size: "",
       lastUpdated: new Date().toISOString(),
@@ -1369,7 +1385,8 @@ const initialState = {
       price: 1000,
       category: "nonfood",
       stock: 5,
-      image: "public/Nonfood/SHAMPOO_SASET_PANTENE_AVOCADO-removebg-preview (1).png",
+      image:
+        "public/Nonfood/SHAMPOO_SASET_PANTENE_AVOCADO-removebg-preview (1).png",
       description: "Pantene Avocado Fullness & Life",
       size: "",
       lastUpdated: new Date().toISOString(),
@@ -1380,7 +1397,8 @@ const initialState = {
       price: 0,
       category: "nonfood",
       stock: 5,
-      image: "public/Nonfood/SHAMPOO_SASET_PANTENE_HIJAU-removebg-preview (1).png",
+      image:
+        "public/Nonfood/SHAMPOO_SASET_PANTENE_HIJAU-removebg-preview (1).png",
       description: "Perawatan Halus & Lembut",
       size: "",
       lastUpdated: new Date().toISOString(),
@@ -1795,7 +1813,7 @@ const initialState = {
   ],
   cart: [],
   isDarkMode: false,
-}
+};
 
 function productReducer(state, action) {
   switch (action.type) {
@@ -1804,108 +1822,130 @@ function productReducer(state, action) {
         ...state,
         products: state.products.map((product) =>
           product.id === action.payload.id
-            ? { ...product, ...action.payload.updates, lastUpdated: new Date().toISOString() }
-            : product,
+            ? {
+                ...product,
+                ...action.payload.updates,
+                lastUpdated: new Date().toISOString(),
+              }
+            : product
         ),
-      }
+      };
     case "DELETE_PRODUCT":
       return {
         ...state,
-        products: state.products.filter((product) => product.id !== action.payload),
-      }
+        products: state.products.filter(
+          (product) => product.id !== action.payload
+        ),
+      };
     case "ADD_TO_CART":
-      const existingItem = state.cart.find((item) => item.id === action.payload.id)
+      const existingItem = state.cart.find(
+        (item) => item.id === action.payload.id
+      );
       if (existingItem) {
         return {
           ...state,
           cart: state.cart.map((item) =>
-            item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item,
+            item.id === action.payload.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
           ),
-        }
+        };
       }
       return {
         ...state,
         cart: [...state.cart, { ...action.payload, quantity: 1 }],
-      }
+      };
     case "REMOVE_FROM_CART":
       return {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
-      }
+      };
     case "UPDATE_CART_QUANTITY":
       if (action.payload.quantity === 0) {
         return {
           ...state,
           cart: state.cart.filter((item) => item.id !== action.payload.id),
-        }
+        };
       }
       return {
         ...state,
         cart: state.cart.map((item) =>
-          item.id === action.payload.id ? { ...item, quantity: action.payload.quantity } : item,
+          item.id === action.payload.id
+            ? { ...item, quantity: action.payload.quantity }
+            : item
         ),
-      }
+      };
     case "CLEAR_CART":
       return {
         ...state,
         cart: [],
-      }
+      };
     case "TOGGLE_DARK_MODE":
       return {
         ...state,
         isDarkMode: !state.isDarkMode,
-      }
+      };
     default:
-      return state
+      return state;
   }
 }
 
 export function ProductProvider({ children }) {
-  const [state, dispatch] = useReducer(productReducer, initialState)
+  const [state, dispatch] = useReducer(productReducer, initialState);
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("sembako-cart")
+    const savedCart = localStorage.getItem("sembako-cart");
     if (savedCart) {
-      const cartItems = JSON.parse(savedCart)
+      const cartItems = JSON.parse(savedCart);
       cartItems.forEach((item) => {
-        dispatch({ type: "ADD_TO_CART", payload: item })
-      })
+        dispatch({ type: "ADD_TO_CART", payload: item });
+      });
     }
-  }, [])
+  }, []);
 
   // Save cart to localStorage whenever cart changes
   useEffect(() => {
-    localStorage.setItem("sembako-cart", JSON.stringify(state.cart))
-  }, [state.cart])
+    localStorage.setItem("sembako-cart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   const value = {
     ...state,
     dispatch,
     // Helper functions
-    updateProduct: (id, updates) => dispatch({ type: "UPDATE_PRODUCT", payload: { id, updates } }),
+    updateProduct: (id, updates) =>
+      dispatch({ type: "UPDATE_PRODUCT", payload: { id, updates } }),
     deleteProduct: (id) => dispatch({ type: "DELETE_PRODUCT", payload: id }),
     addToCart: (product) => dispatch({ type: "ADD_TO_CART", payload: product }),
     removeFromCart: (id) => dispatch({ type: "REMOVE_FROM_CART", payload: id }),
-    updateCartQuantity: (id, quantity) => dispatch({ type: "UPDATE_CART_QUANTITY", payload: { id, quantity } }),
+    updateCartQuantity: (id, quantity) =>
+      dispatch({ type: "UPDATE_CART_QUANTITY", payload: { id, quantity } }),
     clearCart: () => dispatch({ type: "CLEAR_CART" }),
     toggleDarkMode: () => dispatch({ type: "TOGGLE_DARK_MODE" }),
     // Computed values
     totalProducts: state.products.length,
     totalStock: state.products.reduce((sum, product) => sum + product.stock, 0),
-    totalInventoryValue: state.products.reduce((sum, product) => sum + product.price * product.stock, 0),
+    totalInventoryValue: state.products.reduce(
+      (sum, product) => sum + product.price * product.stock,
+      0
+    ),
     lowStockProducts: state.products.filter((product) => product.stock < 10),
-    cartTotal: state.cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    cartTotal: state.cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    ),
     cartItemsCount: state.cart.reduce((sum, item) => sum + item.quantity, 0),
-  }
+  };
 
-  return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+  return (
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+  );
 }
 
 export function useProducts() {
-  const context = useContext(ProductContext)
+  const context = useContext(ProductContext);
   if (!context) {
-    throw new Error("useProducts must be used within a ProductProvider")
+    throw new Error("useProducts must be used within a ProductProvider");
   }
-  return context
+  return context;
 }

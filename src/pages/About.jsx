@@ -1,61 +1,41 @@
-import {
-  ShoppingCart,
-  Star,
-  Users,
-  Award,
-  Play,
-  Moon,
-  Sun,
-} from "lucide-react";
-import { useState } from "react";
+import { ShoppingCart, Star, Users, Award, Play } from "lucide-react";
+import { useProducts } from "../context/ProductContext";
 
-function About({ isDarkMode = false }) {
-  // For testing - you can toggle this manually
-  const [testDarkMode, setTestDarkMode] = useState(false);
-
-  // Use either passed prop or local state for testing
-  const darkMode = isDarkMode || testDarkMode;
+function About() {
+  const { isDarkMode } = useProducts();
 
   const stats = [
-    { number: "10k+", label: "Completed Projects" },
-    { number: "15k", label: "Satisfied Customers" },
-    { number: "10k+", label: "Years Of Mastery" },
-    { number: "45+", label: "Worldwide Honors" },
+    { number: "10k+", label: "Transaksi jual beli online maupun offline" },
+    { number: "11k", label: "Komentar pelanggan puas" },
+  ];
+
+  const teamMembers = [
+    { name: "John Doe", role: "CEO & Founder" },
+    { name: "Jane Smith", role: "CTO" },
+    { name: "Mike Johnson", role: "Lead Developer" },
   ];
 
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
-        darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
-      {/* Temporary Dark Mode Toggle for Testing */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setTestDarkMode(!testDarkMode)}
-          className="p-2 rounded-full bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg"
-        >
-          {darkMode ? (
-            <Sun className="w-5 h-5" />
-          ) : (
-            <Moon className="w-5 h-5" />
-          )}
-        </button>
-      </div>
+      {/* Content starts here - navbar controls dark mode */}
 
       {/* Hero Section */}
       <section className="relative py-20 px-8">
         <div
           className={`absolute inset-0 ${
-            darkMode
+            isDarkMode
               ? "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900"
               : "bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50"
           } opacity-90`}
         ></div>
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center max-w-5xl mx-auto">
           <h1 className="text-5xl font-bold mb-4">About Us</h1>
-          <p className={darkMode ? "text-gray-300" : "text-gray-600"}>
-            Home / About Us
+          <p className={isDarkMode ? "text-gray-300" : "text-gray-600"}>
+            About Us
           </p>
         </div>
         {/* Curved Design Elements */}
@@ -65,7 +45,7 @@ function About({ isDarkMode = false }) {
               <div
                 key={i}
                 className={`absolute ${
-                  darkMode ? "bg-gray-700" : "bg-gray-200"
+                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
                 } opacity-20 rounded-full`}
                 style={{
                   width: `${300 + i * 100}px`,
@@ -90,25 +70,30 @@ function About({ isDarkMode = false }) {
                   <div className="w-12 h-1 bg-orange-500 mr-4"></div>
                   <span
                     className={`text-sm font-medium ${
-                      darkMode ? "text-gray-300" : "text-gray-600"
+                      isDarkMode ? "text-gray-300" : "text-gray-600"
                     }`}
                   >
                     OUR STORY
                   </span>
                 </div>
                 <h2 className="text-4xl font-bold mb-6 leading-tight">
-                  Your Vision Our Expertise Your Success Get Noticed Generate{" "}
-                  <span className="text-orange-500">Leads Dominate.</span>
+                  Kirei's Mart,{" "}
+                  <span className="text-orange-500">
+                    belanja di Kirei, dompet tetap tebel, hati tetap ceria!
+                  </span>
                 </h2>
                 <p
                   className={`${
-                    darkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
                   } mb-6 leading-relaxed`}
                 >
-                  Dengan pengalaman lebih dari 10 tahun dalam industri
-                  teknologi, kami telah membantu ribuan klien mencapai tujuan
-                  bisnis mereka melalui solusi digital yang inovatif dan
-                  strategi pemasaran yang efektif.
+                  Toko Sembako Kirei adalah solusi belanja kebutuhan pokok
+                  harian yang mudah, cepat, dan terpercaya untuk keluarga
+                  Indonesia. Sebagai UMKM yang berfokus pada penjualan sembako,
+                  Kirei menyediakan berbagai produk kebutuhan sehari-hari
+                  seperti beras, minyak goreng, gula, telur, tepung, air
+                  mineral, kopi, hingga lampu. Harga bersaing dan kualitas
+                  terjamin
                 </p>
               </div>
 
@@ -118,14 +103,14 @@ function About({ isDarkMode = false }) {
                   <div key={index} className="text-center">
                     <div
                       className={`text-2xl font-bold mb-1 ${
-                        darkMode ? "text-white" : "text-gray-900"
+                        isDarkMode ? "text-white" : "text-gray-900"
                       }`}
                     >
                       {stat.number}
                     </div>
                     <div
                       className={`text-xs ${
-                        darkMode ? "text-gray-400" : "text-gray-500"
+                        isDarkMode ? "text-gray-400" : "text-gray-500"
                       }`}
                     >
                       {stat.label}
@@ -150,7 +135,7 @@ function About({ isDarkMode = false }) {
                 </div>
                 <button className="flex items-center space-x-2 bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition-colors">
                   <Play className="w-4 h-4" />
-                  <span className="text-sm">WATCH INTRO</span>
+                  <span className="text-sm"></span>
                 </button>
               </div>
             </div>
@@ -162,22 +147,23 @@ function About({ isDarkMode = false }) {
                   {/* Main image placeholder */}
                   <div
                     className={`${
-                      darkMode ? "bg-gray-700" : "bg-gray-200"
+                      isDarkMode ? "bg-gray-700" : "bg-gray-200"
                     } rounded-lg h-64 flex items-center justify-center relative overflow-hidden`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-orange-600/20"></div>
                     <div className="relative z-10 text-center">
-                      <Users
-                        className={`w-12 h-12 mx-auto mb-2 ${
-                          darkMode ? "text-gray-400" : "text-gray-500"
-                        }`}
+                      {/* Ganti ikon dengan foto */}
+                      <img
+                        src="/foto kita/foto 1.jpg"
+                        alt="Team Kami"
+                        className="w-full h-full object-cover rounded-lg"
                       />
                       <span
                         className={`text-xs ${
-                          darkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-300" : "text-gray-600"
                         }`}
                       >
-                        Team Meeting
+                        TEAM KAMI
                       </span>
                     </div>
                   </div>
@@ -185,13 +171,14 @@ function About({ isDarkMode = false }) {
                   {/* Small image */}
                   <div
                     className={`${
-                      darkMode ? "bg-gray-700" : "bg-gray-200"
+                      isDarkMode ? "bg-gray-700" : "bg-gray-200"
                     } rounded-lg h-32 flex items-center justify-center`}
                   >
-                    <Star
-                      className={`w-8 h-8 ${
-                        darkMode ? "text-gray-400" : "text-gray-500"
-                      }`}
+                    {/* Ganti ikon dengan foto */}
+                    <img
+                      src="/foto kita/foto 2.jpg"
+                      alt="Star"
+                      className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
                 </div>
@@ -200,32 +187,34 @@ function About({ isDarkMode = false }) {
                   {/* Small image */}
                   <div
                     className={`${
-                      darkMode ? "bg-gray-700" : "bg-gray-200"
+                      isDarkMode ? "bg-gray-700" : "bg-gray-200"
                     } rounded-lg h-32 flex items-center justify-center`}
                   >
-                    <Award
-                      className={`w-8 h-8 ${
-                        darkMode ? "text-gray-400" : "text-gray-500"
-                      }`}
+                    {/* Ganti ikon dengan foto */}
+                    <img
+                      src="/foto kita/foto 2.jpg"
+                      alt="Award"
+                      className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
 
                   {/* Tall image */}
                   <div
                     className={`${
-                      darkMode ? "bg-gray-700" : "bg-gray-200"
+                      isDarkMode ? "bg-gray-700" : "bg-gray-200"
                     } rounded-lg h-64 flex items-center justify-center relative overflow-hidden`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-orange-600/20"></div>
                     <div className="relative z-10 text-center">
-                      <ShoppingCart
-                        className={`w-12 h-12 mx-auto mb-2 ${
-                          darkMode ? "text-gray-400" : "text-gray-500"
-                        }`}
+                      {/* Ganti ikon dengan foto */}
+                      <img
+                        src="/foto kita/foto 3.jpg"
+                        alt="E-commerce"
+                        className="w-full h-full object-cover rounded-lg"
                       />
                       <span
                         className={`text-xs ${
-                          darkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-300" : "text-gray-600"
                         }`}
                       >
                         E-commerce
@@ -241,83 +230,16 @@ function About({ isDarkMode = false }) {
 
       {/* Bottom Section */}
       <section
-        className={`py-16 px-8 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}
+        className={`py-16 px-8 ${isDarkMode ? "bg-gray-800" : "bg-gray-50"}`}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Image */}
-            <div className="relative">
-              <div
-                className={`${
-                  darkMode ? "bg-gray-700" : "bg-gray-200"
-                } rounded-lg h-96 flex items-center justify-center relative overflow-hidden`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-orange-600/20"></div>
-                <div className="relative z-10 text-center">
-                  <Users
-                    className={`w-24 h-24 mx-auto mb-4 ${
-                      darkMode ? "text-gray-400" : "text-gray-500"
-                    }`}
-                  />
-                  <span
-                    className={`text-sm ${
-                      darkMode ? "text-gray-300" : "text-gray-600"
-                    }`}
-                  >
-                    Professional Team
-                  </span>
-                </div>
-              </div>
-
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors shadow-lg">
-                  <Play className="w-8 h-8 text-white ml-1" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Content */}
-            <div>
-              <div className="w-12 h-1 bg-orange-500 mb-4"></div>
-              <h2 className="text-4xl font-bold mb-6">
-                Your Gateway To{" "}
-                <span className="text-orange-500">Online Excellence</span> Dream
-                Big In Pixels.
-              </h2>
-              <p
-                className={`${
-                  darkMode ? "text-gray-300" : "text-gray-600"
-                } mb-8 leading-relaxed`}
-              >
-                Kami memahami bahwa setiap bisnis memiliki kebutuhan yang unik.
-                Tim ahli kami bekerja sama dengan Anda untuk mengembangkan
-                strategi digital yang tepat sasaran dan memberikan hasil yang
-                terukur untuk pertumbuhan bisnis Anda.
-              </p>
-
-              {/* Stats Row */}
-              <div className="grid grid-cols-5 gap-4 text-center">
-                {["2019", "2020", "2021", "2022", "2023"].map((year, index) => (
-                  <div key={year}>
-                    <div
-                      className={`text-2xl font-bold mb-1 ${
-                        darkMode ? "text-white" : "text-gray-900"
-                      }`}
-                    >
-                      {year}
-                    </div>
-                    <div
-                      className={`text-sm ${
-                        darkMode ? "text-gray-400" : "text-gray-500"
-                      }`}
-                    >
-                      Growth
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Hapus blok coklat kiri, hanya tampilkan judul di tengah */}
+          <div className="flex flex-col items-center justify-center text-center min-h-[400px]">
+            <div className="w-12 h-1 bg-orange-500 mb-4"></div>
+            <h2 className="text-4xl font-bold mb-6">
+              Kirei goes <span className="text-orange-500">Online</span> Dream
+              Big In Pixels.
+            </h2>
           </div>
         </div>
       </section>

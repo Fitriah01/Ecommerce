@@ -1,14 +1,16 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ShoppingCart, Star } from "lucide-react"
+import { FaGooglePlay, FaApple } from "react-icons/fa"
 import { useProducts } from "../context/ProductContext"
 import ProductCard from "../components/ProductCard"
 
 function Home() {
   const { products, isDarkMode } = useProducts()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const navigate = useNavigate()
 
   const promoSlides = [
     {
@@ -16,18 +18,21 @@ function Home() {
       title: "Diskon 20% Beras Premium",
       subtitle: "Berlaku hingga akhir bulan",
       color: "from-yellow-400 to-orange-500",
+      image: "/promo/beras-premium.jpg",
     },
     {
       id: 2,
-      title: "Paket Hemat Bulanan",
-      subtitle: "Hemat hingga 100rb untuk kebutuhan sebulan",
+      title: "Paket Hemat Mingguan",
+      subtitle: "Hemat Sabun Nuvo Isi 4 Hanya 6000",
       color: "from-green-400 to-blue-500",
+      image: "public/PaketNuvo.png",
     },
     {
       id: 3,
       title: "Gratis Ongkir Min. 50rb",
       subtitle: "Untuk wilayah Jakarta dan sekitarnya",
       color: "from-pink-400 to-red-500",
+      image: "/promo/gratis-ongkir.jpg",
     },
   ]
 
@@ -62,89 +67,111 @@ function Home() {
 
   const featuredProducts = products.slice(0, 4)
 
+  // Tambahkan gambar ilustrasi kurir dan icon promo
+  const courierImg = "public/Utama.jpg" // letakkan gambar di public/promo/
+  const beverageImg = "/promo/beverage.png"
+  const fastFoodImg = "/promo/fastfood.png"
+
   return (
     <div className={`${isDarkMode ? "bg-gray-900" : "bg-white"} transition-colors duration-300`}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-yellow-100 via-green-50 to-blue-100 min-h-[600px]">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-3 bg-yellow-200 rounded-full opacity-30 animate-bounce"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${3 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="animate-fade-in-left">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
-                Kirei's
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
-                  {" "}
-                  Mart
+      <section className="relative min-h-[650px] flex items-center justify-center bg-gradient-to-br from-yellow-50 via-orange-50 to-blue-100 py-10">
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Left Side */}
+          <div className="flex flex-col justify-center bg-white/80 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-yellow-100 h-full">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg text-center">
+              <span className="block text-gray-900 tracking-tight">
+                Belanja <span className="relative px-2">
+                  <span className="bg-yellow-200 rounded px-2 py-1 absolute left-0 top-1/2 -translate-y-1/2 w-full h-full -z-10 blur-sm opacity-60"></span>
+                  Hemat
                 </span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Kebutuhan sembako berkualitas untuk keluarga. Belanja mudah, harga terjangkau,
-                pengiriman cepat!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/products"
-                  className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-center"
-                >
-                  Belanja Sekarang
-                </Link>
-                <button className="border-2 border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-                  Lihat Promo
-                </button>
+                , Hidup Nikmat
+              </span>
+              <span className="block text-lg md:text-xl font-semibold text-gray-700 mt-2 mb-2 tracking-wide">
+                Hanya di
+              </span>
+              <span
+                className="bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x font-extrabold tracking-wider"
+                style={{
+                  backgroundSize: "200% 200%",
+                  animation: "gradient-x 3s ease-in-out infinite",
+                  letterSpacing: "0.05em"
+                }}
+              >
+                Kirei's Mart
+              </span>
+            </h1>
+            <style>
+              {`
+                @keyframes gradient-x {
+                  0%, 100% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                }
+              `}
+            </style>
+            <p className="text-gray-700 text-lg mb-8 font-medium text-center">
+              Dari dapur ke meja makan, semua jadi mudah dan menyenangkan dengan Kirei's Mart.
+            </p>
+            <div className="flex gap-4 mb-10 justify-center">
+              <button
+                className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:scale-105 hover:from-yellow-500 hover:to-orange-500 transition"
+                onClick={() => navigate("/products")}
+              >
+                Order Now
+              </button>
+              <button
+                className="bg-white border-2 border-yellow-400 text-yellow-700 px-8 py-3 rounded-xl font-bold shadow hover:bg-yellow-50 hover:scale-105 transition"
+                onClick={() => navigate("/menu")}
+              >
+                Menu
+              </button>
+            </div>
+            <div className="flex gap-4 justify-center">
+              {/* Promo Card */}
+              <div
+                className="bg-gradient-to-br from-yellow-200 via-yellow-100 to-orange-100 rounded-2xl p-4 flex flex-col items-center w-36 shadow-lg border border-yellow-300 cursor-pointer hover:scale-105 hover:shadow-xl transition"
+                onClick={() => navigate("/promo")}
+              >
+                <img src="public/PaketNuvo.png" alt="" className="w-14 h-14 rounded-lg mb-2 shadow" />
+                <span className="text-lg font-bold text-yellow-900 mb-1">Disc 20%</span>
+                <span className="text-xs text-yellow-700 text-center">Isi 4 Hanya 6000</span>
+              </div>
+              {/* Beverages Card */}
+              <div
+                className="bg-gradient-to-br from-purple-200 via-purple-100 to-pink-100 rounded-2xl p-4 flex flex-col items-center w-36 shadow-lg border border-purple-200 cursor-pointer hover:scale-105 hover:shadow-xl transition"
+                onClick={() => navigate("/category/beverages")}
+              >
+                <img src={beverageImg} alt="Beverages" className="w-12 h-12 mb-2 rounded-lg shadow" />
+                <span className="font-semibold text-purple-800">Beverages</span>
+              </div>
+              {/* Fast Food Card */}
+              <div
+                className="bg-gradient-to-br from-orange-200 via-orange-100 to-yellow-100 rounded-2xl p-4 flex flex-col items-center w-36 shadow-lg border border-orange-200 cursor-pointer hover:scale-105 hover:shadow-xl transition"
+                onClick={() => navigate("/category/fast-food")}
+              >
+                <img src={fastFoodImg} alt="Fast Food" className="w-12 h-12 mb-2 rounded-lg shadow" />
+                <span className="font-semibold text-orange-800">Fast Food</span>
               </div>
             </div>
-
-            {/* Right Content - Promo Slider */}
-            <div className="relative animate-fade-in-right">
-              <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl">
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${promoSlides[currentSlide].color} flex items-center justify-center text-white transition-all duration-500`}
-                >
-                  <div className="text-center p-8">
-                    <h3 className="text-3xl font-bold mb-4">{promoSlides[currentSlide].title}</h3>
-                    <p className="text-lg opacity-90">{promoSlides[currentSlide].subtitle}</p>
-                  </div>
-                </div>
-
-                {/* Slide Indicators */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {promoSlides.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors ${
-                        index === currentSlide ? "bg-white" : "bg-white/50"
-                      }`}
-                    />
-                  ))}
-                </div>
+          </div>
+          {/* Right Side */}
+          <div className="flex items-center justify-center bg-white/80 rounded-3xl shadow-2xl p-0 backdrop-blur-md border border-yellow-100 h-full">
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center">
+                <img
+                  src="/Utama.jpg"
+                  alt="Courier"
+                  className="w-full h-full max-w-[500px] max-h-[580px] object-center rounded-2xl shadow-xl"
+                  style={{
+                    background: "#fff",
+                    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10)"
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
-
-        {/* Animated Shopping Cart */}
-        <div className="absolute bottom-10 right-10 w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-          <ShoppingCart className="w-8 h-8 text-white" />
-        </div>
       </section>
-
       {/* Featured Products */}
       <section className={`py-16 ${isDarkMode ? "bg-gray-900" : "bg-white"}`}>
         <div className="container mx-auto px-4">
