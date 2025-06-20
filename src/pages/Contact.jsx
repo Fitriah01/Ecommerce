@@ -83,8 +83,15 @@ function Contact() {
   }
 
   const handleWhatsApp = () => {
-    const message = `Halo, saya ingin bertanya tentang produk Sembako Fresh.`
-    const whatsappUrl = `https://wa.me/62887437649899?text=${encodeURIComponent(message)}`
+    const { name, email, phone, message } = formData
+    const adminNumber = "6287879060790"
+    const waMessage =
+      `PESAN KONTAK KIREI'S MART%0A` +
+      `Nama: ${name}%0A` +
+      `Email: ${email}%0A` +
+      `No. WhatsApp: ${phone}%0A` +
+      `Pesan: ${message}`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${adminNumber}&text=${waMessage}`
     window.open(whatsappUrl, "_blank")
   }
 
@@ -107,7 +114,7 @@ function Contact() {
           {/* Contact Form */}
           <div className={`${isDarkMode ? "bg-gray-800" : "bg-white"} rounded-xl p-8 shadow-lg`}>
             <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-gray-800"}`}>Kirim Pesan</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={e => { e.preventDefault(); handleWhatsApp(); }} className="space-y-6">
               <div>
                 <label className={`block text-sm font-medium mb-2 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
                   Nama Lengkap
@@ -168,32 +175,22 @@ function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={4}
+                  rows={10} // diperbesar agar lebih turun
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent ${
                     isDarkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-300"
-                  }`}
+                  } mb-8`} // tambahkan margin bawah agar tombol lebih turun
                   placeholder="Tulis pesan Anda di sini..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-              >
-                Kirim Pesan
-              </button>
-            </form>
-
-            {/* WhatsApp Button */}
-            <div className="mt-6 pt-6 border-t">
-              <button
-                onClick={handleWhatsApp}
                 className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Chat via WhatsApp</span>
+                <span>Kirim via WhatsApp</span>
               </button>
-            </div>
+            </form>
           </div>
 
           {/* Contact Info & Map */}
