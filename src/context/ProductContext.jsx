@@ -986,7 +986,7 @@ const initialState = {
       stock: 5,
       image: "public/NonFood/CONDITIONER_SASET_PANTENE-removebg-preview (1).png",
       description: "Kondisioner dalam kemasan praktis, melembutkan dan menutrisi rambut.",
-      size: "0 g",
+      size: "600 ml",
       lastUpdated: new Date().toISOString(),
     },
     {
@@ -1030,7 +1030,7 @@ const initialState = {
       stock: 5,
       image: "",
       description: "Kapas lembut dan tebal, ideal untuk membersihkan wajah atau keperluan kosmetik.",
-      size: "0 g",
+      size: "35 g",
       lastUpdated: new Date().toISOString(),
     },
     {
@@ -1047,7 +1047,7 @@ const initialState = {
     {
       id: 95,
       name: "Kapur Barus",
-      price: 0,
+      price: 6000,
       category: "nonfood",
       stock: 5,
       image: "",
@@ -1069,7 +1069,7 @@ const initialState = {
     {
       id: 97,
       name: "Lampu Lanbo 10 Watt",
-      price: 0,
+      price: 12000,
       category: "nonfood",
       stock: 5,
       image: "public/Nonfood/LAMPU_10w___15w-removebg-preview (1).png",
@@ -1080,7 +1080,7 @@ const initialState = {
     {
       id: 98,
       name: "Lampu Lanbo 15 Watt",
-      price: 0,
+      price: 17000,
       category: "nonfood",
       stock: 5,
       image: "public/Nonfood/LAMPU_10w___15w-removebg-preview (1).png",
@@ -1091,7 +1091,7 @@ const initialState = {
     {
       id: 99,
       name: "Lem Kertas Glikol",
-      price: 1000,
+      price: 2000,
       category: "nonfood",
       stock: 5,
       image: "public/Nonfood/LEM_KERTAS-removebg-preview (1).png",
@@ -1102,7 +1102,7 @@ const initialState = {
     {
       id: 100,
       name: "Lem Korea",
-      price: 0,
+      price: 7000,
       category: "nonfood",
       stock: 5,
       image: "public/Nonfood/LEM_SYAITONNIROJIM-removebg-preview (1).png",
@@ -1377,7 +1377,7 @@ const initialState = {
     {
       id: 125,
       name: "Shampoo Saset Pantene Hijau",
-      price: 0,
+      price: 1000,
       category: "nonfood",
       stock: 5,
       image: "public/Nonfood/SHAMPOO_SASET_PANTENE_HIJAU-removebg-preview (1).png",
@@ -1608,12 +1608,12 @@ const initialState = {
     {
       id: 146,
       name: "Mie Telor A1",
-      price: 0,
+      price: 6000,
       category: "mie",
       stock: 5,
       image: "",
       description: "Mie telur berkualitas untuk berbagai jenis masakan.",
-      size: "180 g",
+      size: "200 g",
       lastUpdated: new Date().toISOString(),
     },
     {
@@ -1641,7 +1641,7 @@ const initialState = {
     {
       id: 149,
       name: "Sohun",
-      price: 0,
+      price: 3000,
       category: "mie",
       stock: 5,
       image: "",
@@ -1685,7 +1685,7 @@ const initialState = {
     {
       id: 153,
       name: "Biskuit Coco Puff",
-      price: 0,
+      price: 10000,
       category: "jajanan",
       stock: 5,
       image: "",
@@ -1707,7 +1707,7 @@ const initialState = {
     {
       id: 155,
       name: "Hatari Malkist",
-      price: 0,
+      price: 7000,
       category: "jajanan",
       stock: 5,
       image: "",
@@ -1718,7 +1718,7 @@ const initialState = {
     {
       id: 156,
       name: "Hatari Malkist Margarine",
-      price: 0,
+      price: 7000,
       category: "jajanan",
       stock: 5,
       image: "",
@@ -1762,7 +1762,7 @@ const initialState = {
     {
       id: 160,
       name: "Peanut Biskuit",
-      price: 0,
+      price: 12000,
       category: "jajanan",
       stock: 5,
       image: "",
@@ -1784,7 +1784,7 @@ const initialState = {
     {
       id: 162,
       name: "Rose Cream Biskuit",
-      price: 0,
+      price: 8000,
       category: "jajanan",
       stock: 5,
       image: "",

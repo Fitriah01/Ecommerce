@@ -246,7 +246,7 @@ function Contact() {
               <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-gray-800"}`}>Lokasi Toko</h2>
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.4546810667034!2d104.781509!3d-2.9712522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b7732c368ffe3%3A0x6fec4f162c4925da!2sMister%20Pangkas!5e0!3m2!1sid!2sid!4v1749804738725!5m2!1sid!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.4546810667034!2d104.781509!3d-2.9712522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b7732c368ffe3%3A0x6fec4f162c4925da!2sMister%20Pangkas!5e0!3m2!1sid!2sid!4v1750404200054!5m2!1sid!2sid"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

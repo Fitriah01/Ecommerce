@@ -37,7 +37,7 @@ function Footer() {
               <li><Link to="/about" className="hover:underline">Tentang Kami</Link></li>
               <li><Link to="/contact" className="hover:underline">Kontak & Bantuan</Link></li>
               <li><Link to="/products" className="hover:underline">Lihat Produk</Link></li>
-              <li><a href="https://wa.me/62887437649899" target="_blank" rel="noopener noreferrer" className="hover:underline">Customer Support</a></li>
+              <li><a href="https://wa.me/6287879060790" target="_blank" rel="noopener noreferrer" className="hover:underline">Customer Support</a></li>
             </ul>
           </div>
 
