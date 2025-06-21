@@ -18,21 +18,21 @@ function Home() {
       title: "Diskon 20% Beras Premium",
       subtitle: "Berlaku hingga akhir bulan",
       color: "from-yellow-400 to-orange-500",
-      image: "/promo/beras-premium.jpg",
+      image: "//promo/beras-premium.jpg",
     },
     {
       id: 2,
       title: "Paket Hemat Mingguan",
       subtitle: "Hemat Sabun Nuvo Isi 4 Hanya 6000",
       color: "from-green-400 to-blue-500",
-      image: "PaketNuvo.png",
+      image: "/PaketNuvo.png",
     },
     {
       id: 3,
       title: "Gratis Ongkir Min. 50rb",
       subtitle: "Untuk wilayah Jakarta dan sekitarnya",
       color: "from-pink-400 to-red-500",
-      image: "/promo/gratis-ongkir.jpg",
+      image: "//promo/gratis-ongkir.jpg",
     },
   ]
 
