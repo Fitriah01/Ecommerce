@@ -25,7 +25,7 @@ function Home() {
       title: "Paket Hemat Mingguan",
       subtitle: "Hemat Sabun Nuvo Isi 4 Hanya 6000",
       color: "from-green-400 to-blue-500",
-      image: "public/PaketNuvo.png",
+      image: "PaketNuvo.png",
     },
     {
       id: 3,
@@ -68,7 +68,7 @@ function Home() {
   const featuredProducts = products.slice(0, 4)
 
   // Tambahkan gambar ilustrasi kurir dan icon promo
-  const courierImg = "public/Utama.jpg" // letakkan gambar di public/promo/
+  const courierImg = "Utama.jpg" // letakkan gambar di promo/
   const beverageImg = "/promo/beverage.png"
   const fastFoodImg = "/promo/fastfood.png"
 
@@ -132,7 +132,7 @@ function Home() {
                 className="bg-gradient-to-br from-yellow-200 via-yellow-100 to-orange-100 rounded-2xl p-4 flex flex-col items-center w-36 shadow-lg border border-yellow-300 cursor-pointer hover:scale-105 hover:shadow-xl transition"
                 onClick={() => navigate("/promo")}
               >
-                <img src="public/PaketNuvo.png" alt="" className="w-14 h-14 rounded-lg mb-2 shadow" />
+                <img src="PaketNuvo.png" alt="" className="w-14 h-14 rounded-lg mb-2 shadow" />
                 <span className="text-lg font-bold text-yellow-900 mb-1">Disc 20%</span>
                 <span className="text-xs text-yellow-700 text-center">Isi 4 Hanya 6000</span>
               </div>
