@@ -228,120 +228,14 @@ function About() {
         </div>
       </section>
 
-{/* Keunggulan Toko */}
-<section className={`py-16 px-8 ${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-r from-orange-50 via-white to-blue-50'}`}>
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-3xl font-bold text-center mb-10 text-orange-500">Keunggulan Kirei Mart</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div className={`rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-orange-400 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <Star className="w-10 h-10 text-orange-500 mb-3" />
-        <h3 className="font-semibold text-lg mb-2">Produk Berkualitas</h3>
-        <p className={`${isDarkMode ? "text-gray-300" : "text-gray-400"} text-sm`}>Setiap produk dipilih dengan teliti dan dijamin kualitasnya.</p>
-      </div>
-      <div className={`rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-orange-400 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <Award className="w-10 h-10 text-blue-500 mb-3" />
-        <h3 className="font-semibold text-lg mb-2">Harga Bersahabat</h3>
-        <p className={`${isDarkMode ? "text-gray-300" : "text-gray-400"} text-sm`}> kompetitif untuk semua kalangan tanpa mengorbankan mutu.</p>
-      </div>
-      <div className={`rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-orange-400 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <Users className="w-10 h-10 text-orange-500 mb-3" />
-        <h3 className="font-semibold text-lg mb-2">Pelayanan Cepat</h3>
-        <p className={`${isDarkMode ? "text-gray-300" : "text-gray-400"} text-sm`}>Respon cepat dan ramah, pesanan diproses tanpa menunggu lama.</p>
-      </div>
-      <div className={`rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-orange-400 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <ShoppingCart className="w-10 h-10 text-blue-500 mb-3" />
-        <h3 className="font-semibold text-lg mb-2">Lokasi Strategis</h3>
-        <p className={`${isDarkMode ? "text-gray-300" : "text-gray-400"} text-sm`}>Mudah dijangkau, pengiriman cepat ke seluruh area Palembang.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Testimoni Pelanggan */}
-<section className={`py-16 px-8 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-3xl font-bold text-center mb-10 text-orange-500">Testimoni Pelanggan</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-orange-50'}`}>
-        <div className="flex mb-2">
-          {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400" />)}
-        </div>
-        <p className={`${isDarkMode ? "text-gray-200" : "text-gray-500"} mb-2 italic`}>"Pelayanan cepat, harga murah, produk selalu fresh!"</p>
-        <span className="font-semibold text-orange-500">- Siti, Palembang</span>
-      </div>
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-orange-50'}`}>
-        <div className="flex mb-2">
-          {[...Array(4)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400" />)}
-        </div>
-        <p className={`${isDarkMode ? "text-gray-200" : "text-gray-500"} mb-2 italic`}>"Belanja di Kirei Mart selalu puas, adminnya ramah dan pengiriman cepat."</p>
-        <span className="font-semibold text-orange-500">- Budi, Kertapati</span>
-      </div>
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-orange-50'}`}>
-        <div className="flex mb-2">
-          {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400" />)}
-        </div>
-        <p className={`${isDarkMode ? "text-gray-200" : "text-gray-500"} mb-2 italic`}>"Produk lengkap, harga bersaing, cocok untuk langganan bulanan!"</p>
-        <span className="font-semibold text-orange-500">- Lina, Plaju</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Misi & Visi */}
-<section className={`py-16 px-8 ${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-r from-blue-50 via-white to-orange-50'}`}>
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-3xl font-bold text-center mb-10 text-blue-600">Misi & Visi Kirei Mart</h2>
-    <div className="grid md:grid-cols-2 gap-8">
-      <div className={`flex flex-col items-center text-center rounded-xl shadow-lg p-8 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <Award className="w-10 h-10 text-blue-500 mb-3" />
-        <h3 className="font-semibold text-lg mb-2">Visi</h3>
-        <p className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}text-2xl`}>Menjadi toko sembako modern yang terpercaya, terjangkau, dan selalu hadir untuk kebutuhan masyarakat Palembang dan sekitarnya.</p>
-      </div>
-      <div className={`flex flex-col items-center text-center rounded-xl shadow-lg p-8 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <Users className="w-10 h-10 text-orange-500 mb-3" />
-        <h3 className="font-semibold text-lg mb-2">Misi</h3>
-        <p className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}text-2xl`}>Memberikan pelayanan terbaik, produk berkualitas, dan harga bersahabat dengan mengutamakan kepuasan pelanggan serta inovasi berkelanjutan.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Statistik Tambahan */}
-<section className={`py-16 px-8 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-3xl font-bold text-center mb-10 text-blue-600">Statistik Kirei Mart</h2>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-blue-50'}`}>
-        <span className="text-3xl font-bold text-blue-600 mb-2">2020</span>
-        <span className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Tahun Berdiri</span>
-      </div>
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-blue-50'}`}>
-        <span className="text-3xl font-bold text-blue-600 mb-2">12</span>
-        <span className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Jumlah Karyawan</span>
-      </div>
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-blue-50'}`}>
-        <span className="text-3xl font-bold text-blue-600 mb-2">150+</span>
-        <span className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Produk Terdaftar</span>
-      </div>
-      <div className={`rounded-xl shadow p-6 flex flex-col items-center text-center ${isDarkMode ? 'bg-gray-800' : 'bg-blue-50'}`}>
-        <div className="flex items-center justify-center mb-2">
-          <Star className="w-6 h-6 text-yellow-400 mr-1" />
-          <span className="text-3xl font-bold text-blue-600">4.9</span>
-        </div>
-        <span className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Rating Rata-rata</span>
-      </div>
-    </div>
-  </div>
-</section> 
-
       {/* Bottom Section */}
       <section
-        className={`py-1 px-8 ${isDarkMode ? "bg-gray-800" : "bg-gray-50"}`}
+        className={`py-16 px-8 ${isDarkMode ? "bg-gray-800" : "bg-gray-50"}`}
       >
         <div className="max-w-7xl mx-auto">
           {/* Hapus blok coklat kiri, hanya tampilkan judul di tengah */}
           <div className="flex flex-col items-center justify-center text-center min-h-[400px]">
-            <div className="w-20 h-1 bg-orange-500 mb-4"></div>
+            <div className="w-12 h-1 bg-orange-500 mb-4"></div>
             <h2 className="text-4xl font-bold mb-6">
               Kirei goes <span className="text-orange-500">Online</span> Dream
               Big In Pixels.

@@ -1,6 +1,5 @@
 import { ShoppingCart } from "lucide-react"
 import { useProducts } from "../context/ProductContext"
-import { Link } from "react-router-dom"
 
 function Footer() {
   const { isDarkMode } = useProducts()
@@ -22,32 +21,32 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Kategori Produk</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/products?category=bahan-makanan" className="hover:underline">Bahan Makanan</Link></li>
-              <li><Link to="/products?category=minuman" className="hover:underline">Minuman</Link></li>
-              <li><Link to="/products?category=bumbu-masakan" className="hover:underline">Bumbu Masakan</Link></li>
-              <li><Link to="/products?category=nonfood" className="hover:underline">Non-Food</Link></li>
-              <li><Link to="/products?category=jajanan" className="hover:underline">Jajanan</Link></li>
-              <li><Link to="/products?category=mie" className="hover:underline">Mie</Link></li>
+              <li>Bahan Makanan</li>
+              <li>Minuman</li>
+              <li>Bumbu Masakan</li>
+              <li>Non-Food</li>
+              <li>Jajanan</li>
+              <li>Mie</li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Layanan</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/about" className="hover:underline">Tentang Kami</Link></li>
-              <li><Link to="/contact" className="hover:underline">Kontak & Bantuan</Link></li>
-              <li><Link to="/products" className="hover:underline">Lihat Produk</Link></li>
-              <li><a href="https://wa.me/6287879060790" target="_blank" rel="noopener noreferrer" className="hover:underline">Customer Support</a></li>
+              <li>Pengiriman Cepat</li>
+              <li>Langganan Bulanan</li>
+              <li>Paket Hemat</li>
+              <li>Customer Support</li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Kontak</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="tel:+62887437649899" className="hover:underline">📱 +62 887-4376-49899</a></li>
-              <li><a href="mailto:umkmkirei@gmail.com" className="hover:underline">📧 umkmkirei@gmail.com</a></li>
-              <li><a href="https://goo.gl/maps/xyz" target="_blank" rel="noopener noreferrer" className="hover:underline">📍 Palembang</a></li>
-              <li><span className="">🕒 08:00 - 20:00 WIB</span></li>
+              <li>📱 +62 887-4376-49899</li>
+              <li>📧 umkmkirei@gmail.com</li>
+              <li>📍 Palembang</li>
+              <li>🕒 08:00 - 20:00 WIB</li>
             </ul>
           </div>
         </div>
