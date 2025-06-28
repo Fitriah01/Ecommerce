@@ -58,7 +58,7 @@ function Navbar() {
             <button
               onClick={toggleDarkMode}
               className={`p-2 rounded-full hover:scale-110 transition-transform ${
-                isDarkMode ? "bg-gray-700" : "bg-gray-100"
+                isDarkMode ? "bg-gray-500" : "bg-gray-100"
               }`}
             >
               {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-gray-600" />}
@@ -67,8 +67,9 @@ function Navbar() {
             {/* Admin Button menggantikan Cart Icon */}
             <Link
               to="/admin/login"
-              className={`w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-gray-700 to-gray-900 hover:from-yellow-500 hover:to-orange-500 transition-colors duration-300 shadow-md`}
-              title="Admin Login"
+              className={`p-2 rounded-full hover:scale-110 transition-transform ${
+                isDarkMode ? "bg-gray-700" : "bg-gray-500"
+              }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75A4.5 4.5 0 008 6.75v3.75m8.25 0a2.25 2.25 0 11-4.5 0m4.5 0h-4.5m-2.25 6.75a6.75 6.75 0 1113.5 0v.75a.75.75 0 01-.75.75H3.75a.75.75 0 01-.75-.75v-.75z" />

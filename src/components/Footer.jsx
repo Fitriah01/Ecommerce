@@ -43,7 +43,7 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Kontak</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>📱 +62 887-4376-49899</li>
+              <li>📱 +62 878-7906-0790</li>
               <li>📧 umkmkirei@gmail.com</li>
               <li>📍 Palembang</li>
               <li>🕒 08:00 - 20:00 WIB</li>
