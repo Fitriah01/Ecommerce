@@ -77,7 +77,7 @@ function AdminDashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-              <p className="text-gray-600">Kelola inventori Sembako Fresh</p>
+              <p className="text-gray-600">Kelola inventori Kirei's Mart</p>
             </div>
             <button
               onClick={handleLogout}

@@ -215,7 +215,7 @@ function Contact() {
                   <Phone className="w-5 h-5 text-yellow-500" />
                   <div>
                     <p className={`font-medium ${isDarkMode ? "text-white" : "text-gray-800"}`}>Telepon</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>+62 887-4376-49899</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>+62 878-7906-0790</p>
                   </div>
                 </div>
 

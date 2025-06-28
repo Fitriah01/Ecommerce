@@ -108,7 +108,7 @@ function About() {
                     <div className="relative z-10 text-center">
                       {/* Ganti ikon dengan foto */}
                       <img
-                        src="/foto kita/foto 1.jpg"
+                        src="/foto kita/foto 4.jpg"
                         alt="Team Kami"
                         className="w-full h-full object-cover rounded-lg"
                       />
@@ -130,7 +130,7 @@ function About() {
                   >
                     {/* Ganti ikon dengan foto */}
                     <img
-                      src="/foto kita/foto 2.jpg"
+                      src="/foto kita/foto11.jpg"
                       alt="Star"
                       className="w-full h-full object-cover rounded-lg"
                     />
@@ -146,7 +146,7 @@ function About() {
                   >
                     {/* Ganti ikon dengan foto */}
                     <img
-                      src="/foto kita/foto 2.jpg"
+                      src="/foto kita/foto22.jpg"
                       alt="Award"
                       className="w-full h-full object-cover rounded-lg"
                     />
@@ -162,7 +162,7 @@ function About() {
                     <div className="relative z-10 text-center">
                       {/* Ganti ikon dengan foto */}
                       <img
-                        src="/foto kita/foto 3.jpg"
+                        src="/foto kita/foto 4.jpg"
                         alt="E-commerce"
                         className="w-full h-full object-cover rounded-lg"
                       />

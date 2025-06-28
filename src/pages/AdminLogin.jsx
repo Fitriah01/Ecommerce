@@ -58,7 +58,7 @@ function AdminLogin() {
           >
             Admin Login
           </h1>
-          <p className="text-gray-600">Masuk ke dashboard admin Sembako Fresh</p>
+          <p className="text-gray-600">Masuk ke dashboard admin Kirei's Mart</p>
         </div>
 
         {/* Login Form */}
